@@ -48,10 +48,7 @@ gulp.task('copyLibs', function() {
 gulp.task('webserver', function() {
     connect.server({
         livereload: true,
-        root: ['dist'],
-        open: {
-            browser: 'chrome'
-        }
+        root: ['dist']
     });
 });
 
