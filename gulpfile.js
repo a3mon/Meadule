@@ -30,6 +30,8 @@ gulp.task('copySources', function() {
         .pipe(gulp.dest('dist/css'));
     gulp.src('src/images/**')
         .pipe(gulp.dest('dist/images'));
+    gulp.src('src/api/**')
+        .pipe(gulp.dest('dist/api'));
 });
 
 // Copy libs
@@ -42,6 +44,14 @@ gulp.task('copyLibs', function() {
             'libs/angular/angular.min.js.map'
         ], {
             base: 'libs/angular'
+        })
+        .pipe(gulp.dest('dist/js'));
+    gulp.src([
+            'libs/angular-resource/angular-resource.min.js',
+            'libs/angular-resource/angular-resource.js',
+            'libs/angular-resource/angular-resource.min.js.map'
+        ], {
+            base: 'libs/angular-resource'
         })
         .pipe(gulp.dest('dist/js'));
 });
@@ -65,6 +75,7 @@ gulp.task('watch', function() {
     gulp.watch('src/*.html', ['copySources']);
     gulp.watch('src/css/*.css', ['copySources']);
     gulp.watch('src/images/**', ['copySources']);
+    gulp.watch('src/api/**', ['copySources']);
     gulp.watch('dist/**', ['livereload']);
     gulp.watch('libs/**', ['copyLibs']);
 });
