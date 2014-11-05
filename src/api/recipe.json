@@ -16,7 +16,32 @@
             }
         }
     }, {
+        "instruction": "we enjoyed some energizing mint tea at a rest shop while on the long drive to the North African coast",
+        "img": {
+            "src": "./images/Mint_Tea.png",
+            "width": 2048,
+            "height": 1365,
+            "alt": "mint tea &amp; recipe",
+            "attribution": {
+                "link": "https://www.flickr.com/photos/austinevan/3167902393/",
+                "licence": "https://creativecommons.org/licenses/by/2.0/",
+                "logo": "./images/cc_logo.svg",
+                "originator": "Evan Bench"
+            }
+        }
+    }, {
         "instruction": "Den Sauerteig, das Koch- und das Quellstück, und alle restlichen Zutaten in die Küchenmaschine geben und 5 – 7 Minuten kneten. Danach den Teig in eine gut gefettete Kastenform (1 Kg), die mit Sonnenblumenkernen ausgesteut ist,  geben und für 60 Minuten zur Gare stellen. Vorher auch noch oben mit Sonnenblumenkernen bestreuen.",
-        "img": "./images/Spaghetti-Bolognese-1.jpg"
+        "img": {
+            "src": "./images/Penne_Pasta.jpg",
+            "width": 1800,
+            "height": 1200,
+            "alt": "Penne Pasta with Kale &amp; Sun-Dried Tomatoes (Vegan Recipe) by Jennifer, on Flickr",
+            "attribution": {
+                "link": "https://www.flickr.com/photos/sweetonveg/7244404448/",
+                "licence": "https://creativecommons.org/licenses/by/2.0/",
+                "logo": "./images/cc_logo.svg",
+                "originator": "Jennifer"
+            }
+        }
     }]
 }

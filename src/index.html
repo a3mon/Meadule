@@ -19,6 +19,8 @@
         <div ng-style="{'background-image':'url(' + step.img.src + ')'}" class="step">
 
             <div class="foot">
+                <a href="#" ng-click="back()">back</a>
+                <a href="#" ng-click="next()">next</a>
                 <p class="attribution">
                     Photo: 
                     <a href="{{step.img.attribution.link}}" target="_blank">
