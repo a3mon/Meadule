@@ -14,7 +14,10 @@
     <script type="text/javascript" src="js/all.min.js"></script>
 </head>
 <body ng-controller="SomeCtrl">
-	<h1>{{hello}}</h1> 
- 	
+	<h1>{{title}}</h1>
+	<div ng-repeat="step in steps">
+		<p>{{step.instruction}}</p>
+	</div>
+	<pre>{{debug}}</pre>
 </body>
 </html>
