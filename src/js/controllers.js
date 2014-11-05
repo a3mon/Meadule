@@ -12,20 +12,25 @@ app.controller('SomeCtrl', ['$scope', 'RecipeService', function($scope, RecipeSe
         $scope.step = result.steps[0];
     });
 
+    $scope.show = function (stepIndex) {
+    	$scope.stepIndex = stepIndex;
+    	$scope.step = $scope.recipe.steps[stepIndex];
+    };
+
     $scope.back = function () {
         var last = $scope.recipe.steps.length - 1;
-        $scope.stepIndex -= 1;
-        $scope.stepIndex = $scope.stepIndex < 0 ? last : $scope.stepIndex; 
+        var stepIndex = $scope.stepIndex - 1;
+        stepIndex = stepIndex < 0 ? last : stepIndex; 
         
-        $scope.step = $scope.recipe.steps[$scope.stepIndex];
+        $scope.show(stepIndex);
     };
 
     $scope.next = function () {
         var length = $scope.recipe.steps.length;
-        $scope.stepIndex += 1;
-        $scope.stepIndex %= length; 
+        var stepIndex = $scope.stepIndex + 1;
+        stepIndex %= length; 
         
-        $scope.step = $scope.recipe.steps[$scope.stepIndex];
+        $scope.show(stepIndex);
     };
 
 
