@@ -8,16 +8,28 @@
  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
- 	<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/angular.min.js"></script>
     <script type="text/javascript" src="js/all.min.js"></script>
 </head>
 <body ng-controller="SomeCtrl">
-	<h1>{{title}}</h1>
-	<div ng-repeat="step in steps">
-		<p>{{step.instruction}}</p>
-	</div>
-	<pre>{{debug}}</pre>
+    <div class="wrapper">
+        <div ng-style="{'background-image':'url(' + step.img.src + ')'}" class="step">
+
+            <div class="foot">
+                <p class="attribution">
+                    Photo: 
+                    <a href="{{step.img.attribution.link}}" target="_blank">
+                        <img ng-src="{{step.img.attribution.logo}}">
+                        {{step.img.attribution.originator}}
+                    </a>
+                </p>
+                <p class="instruction">{{step.instruction}}</p>
+            </div>
+            
+        </div>
+    </div>
+    <pre>{{debug}}</pre>
 </body>
 </html>

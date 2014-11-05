@@ -8,7 +8,7 @@ app.factory('Recipe', Recipe);
 app.controller('SomeCtrl', ['$scope', 'Recipe', function($scope, Recipe) {
     var r = Recipe;
     $scope.title = r.title;
-    $scope.steps = r.steps;
+    $scope.step = r.steps[0];
 
-    $scope.debug = JSON.stringify(r, undefined, 2);
+    $scope.debug = JSON.stringify($scope.step, undefined, 2);
 }]);

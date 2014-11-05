@@ -28,6 +28,8 @@ gulp.task('copySources', function() {
         .pipe(gulp.dest('dist'));
     gulp.src('src/css/*css')
         .pipe(gulp.dest('dist/css'));
+    gulp.src('src/images/**')
+        .pipe(gulp.dest('dist/images'));
 });
 
 // Copy libs
@@ -62,6 +64,7 @@ gulp.task('watch', function() {
     gulp.watch('src/js/*.js', ['lint', 'scripts']);
     gulp.watch('src/*.html', ['copySources']);
     gulp.watch('src/css/*.css', ['copySources']);
+    gulp.watch('src/images/**', ['copySources']);
     gulp.watch('dist/**', ['livereload']);
     gulp.watch('libs/**', ['copyLibs']);
 });
