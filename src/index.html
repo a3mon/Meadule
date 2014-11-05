@@ -15,6 +15,10 @@
     <script type="text/javascript" src="js/all.min.js"></script>
 </head>
 <body ng-controller="SomeCtrl">
+    <ol class="carousel-indicators">
+        <li ng-repeat="step in recipe.steps"
+            ng-class="{active: $index == stepIndex}"></li>
+    </ol>
     <div class="wrapper">
         <div ng-style="{'background-image':'url(' + step.img.src + ')'}" class="step">
 
