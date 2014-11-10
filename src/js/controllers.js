@@ -33,7 +33,6 @@ app.controller('SomeCtrl', ['$scope', 'RecipeService', function($scope, RecipeSe
         $scope.show(stepIndex);
     };
 
-
     $scope.$watch('recipe', function() {
         $scope.debug = JSON.stringify($scope.recipe, undefined, 2);
     }, true);
