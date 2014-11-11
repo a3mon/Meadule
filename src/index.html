@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
  
-    <title>Title</title>
+    <title>Meadule</title>
  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
@@ -17,7 +17,8 @@
 <body ng-controller="SomeCtrl">
     <ol class="carousel-indicators">
         <li ng-repeat="step in recipe.steps"
-            ng-class="{active: $index == stepIndex}"></li>
+            ng-class="{active: $index == stepIndex}"
+            ng-click="show($index)"></li>
     </ol>
     <div class="wrapper">
         <div ng-style="{'background-image':'url(' + step.img.src + ')'}" class="step">

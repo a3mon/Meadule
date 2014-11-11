@@ -8,8 +8,8 @@ app.factory('RecipeService', ['$resource', RecipeService]);
 app.controller('SomeCtrl', ['$scope', 'RecipeService', function($scope, RecipeService) {
     new RecipeService().$get(function(result) {
         $scope.recipe = result;
-        $scope.stepIndex = 0;
-        $scope.step = result.steps[0];
+
+        $scope.show(0);
     });
 
     $scope.show = function (stepIndex) {
