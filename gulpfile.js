@@ -49,10 +49,8 @@ gulp.task('scripts', function() {
 });
 
 // Copy sources
-var copySources = function(files, dist) {
-    console.log(files);
-    console.log(dist);
-    files.pipe(gulp.dest(dist));
+var copySources = function(files) {
+    files.pipe(gulp.dest(basePath.dist));
 }
 gulp.task('copySources', function() {
     copySources(gulp.src([
@@ -62,26 +60,29 @@ gulp.task('copySources', function() {
             srcAssets.api + '**/*.json'
         ], {
             base: basePath.src
-        }), basePath.dist);
+        }));
 });
 
 // Copy libs
+var copyLibs = function(files) {
+    files.pipe(gulp.dest(distAssets.js));
+}
 gulp.task('copyLibs', function() {
-    copySources(gulp.src(basePath.libs + 'bootstrap/dist/css/bootstrap.min.css'), distAssets.css);
-    copySources(gulp.src([
+    copyLibs(gulp.src(basePath.libs + 'bootstrap/dist/css/bootstrap.min.css'), distAssets.css);
+    copyLibs(gulp.src([
             basePath.libs + 'angular/angular.min.js',
             basePath.libs + 'angular/angular.js',
             basePath.libs + 'angular/angular.min.js.map'
         ], {
             base: basePath.libs + 'angular/'
         }), distAssets.js);
-    copySources(gulp.src([
+    copyLibs(gulp.src([
             basePath.libs + 'angular-resource/angular-resource.min.js',
             basePath.libs + 'angular-resource/angular-resource.js',
             basePath.libs + 'angular-resource/angular-resource.min.js.map'
         ], {
             base: basePath.libs + 'angular-resource/'
-        }), distAssets.js);
+        }));
 });
 
 // Connect wevserver
@@ -106,20 +107,16 @@ gulp.task('watch', function() {
             srcAssets.css + '**/*.css',
             srcAssets.images + '**/*.*',
             srcAssets.api + '**/*.json'
-        ], function(files) {
-            console.log('copying');
-            copySources(files, basePath.dist);
-            console.log('copied');
-            return files;
+        ], function(files, cb) {
+            gulp.start('copySources', cb);
+
         });
 
-    //gulp.watch('src/*.html', ['copySources']);
-    //gulp.watch('src/css/*.css', ['copySources']);
-    //gulp.watch('src/images/**', ['copySources']);
-    //gulp.watch('src/api/**', ['copySources']);
-
     gulp.watch('libs/**', ['copyLibs']);
-    gulp.watch('dist/**', ['livereload']);
+
+    watch('dist/**', function(files, cb) {
+        gulp.start('livereload', cb)
+    });
 });
 
 // Default Task
