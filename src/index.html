@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="js/angular.min.js"></script>
     <script type="text/javascript" src="js/angular-resource.min.js"></script>
+    <script type="text/javascript" src="js/angular-sanitize.min.js"></script>
     <script type="text/javascript" src="js/all.min.js"></script>
 </head>
 <body ng-controller="SomeCtrl">
@@ -33,7 +34,7 @@
                         {{step.img.attribution.originator}}
                     </a>
                 </p>
-                <p class="instruction">{{step.instruction}}</p>
+                <p class="instruction" ng-bind-html="step.instruction" />
             </div>
             
         </div>

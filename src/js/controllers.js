@@ -2,12 +2,13 @@
 
 /* Controllers */
 
-var app = angular.module('App', ['ngResource']);
+var app = angular.module('App', ['ngResource', 'ngSanitize']);
 app.factory('RecipeService', ['$resource', RecipeService]);
+app.factory('RecipeHelper', RecipeHelper);
 
-app.controller('SomeCtrl', ['$scope', 'RecipeService', function($scope, RecipeService) {
+app.controller('SomeCtrl', ['$scope', 'RecipeService', 'RecipeHelper', function($scope, RecipeService, RecipeHelper) {
     new RecipeService().$get(function(result) {
-        $scope.recipe = result;
+        $scope.recipe = RecipeHelper.addIngredientStep(result);
 
         $scope.show(0);
     });

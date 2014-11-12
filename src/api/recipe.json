@@ -43,5 +43,46 @@
                 "originator": "Jennifer"
             }
         }
+    }],
+    "ingredients": [{
+        "quantity": 5,
+        "unit": "stk.",
+        "name": "Eier"
+    }, {
+        "quantity": 500,
+        "unit": "ml",
+        "name": "Milch"
+    }, {
+        "quantity": 500,
+        "unit": "ml",
+        "name": "Milch"
+    }, {
+        "quantity": 300,
+        "unit": "g",
+        "name": "Mehl"
+    }, {
+        "quantity": 150,
+        "unit": "g",
+        "name": "Butter"
+    }, {
+        "quantity": 1,
+        "unit": "TL",
+        "name": "Packpulver"
+    }, {
+        "quantity": 3,
+        "unit": "stk",
+        "name": "Orangen"
+    }, {
+        "quantity": 3,
+        "unit": "TL",
+        "name": "Salz"
+    }, {
+        "quantity": 100,
+        "unit": "g",
+        "name": "Zucker"
+    }, {
+        "quantity": 200,
+        "unit": "ml",
+        "name": "Sahne"
     }]
 }

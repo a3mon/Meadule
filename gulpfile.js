@@ -83,6 +83,13 @@ gulp.task('copyLibs', function() {
         ], {
             base: basePath.libs + 'angular-resource/'
         }));
+    copyLibs(gulp.src([
+            basePath.libs + 'angular-sanitize/angular-sanitize.min.js',
+            basePath.libs + 'angular-sanitize/angular-sanitize.js',
+            basePath.libs + 'angular-sanitize/angular-sanitize.min.js.map'
+        ], {
+            base: basePath.libs + 'angular-sanitize/'
+        }));
 });
 
 // Connect wevserver
